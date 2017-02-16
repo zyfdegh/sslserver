@@ -7,7 +7,7 @@ import (
 func main() {
 	ir := iris.New()
 	ir.Get("/", handleGetRoot)
-	ir.ListenLETSENCRYPT("fanach.win")
+	ir.ListenTLS(":443", "./certs/server.pem", "./certs/server.key")
 }
 
 func handleGetRoot(ctx *iris.Context) {
